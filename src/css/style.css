@@ -123,7 +123,8 @@ header {
   flex-wrap: wrap;
 }
 
-.github-btn {
+.github-btn,
+.npm-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -138,13 +139,15 @@ header {
   transition: all 0.2s ease;
 }
 
-.github-btn:hover {
+.github-btn:hover,
+.npm-btn:hover {
   background: var(--bg-surface-elevated);
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
 
-.github-btn svg {
+.github-btn svg,
+.npm-btn svg {
   flex-shrink: 0;
 }
 
