@@ -1,8 +1,8 @@
 /**
- * mer-maid demo application controller
+ * mermaid-element demo application controller
  */
 
-import { MerMaid } from './mer-maid/index.js';
+import { MermaidElement } from './mermaid-element/index.js';
 
 const PRESETS = {
   flowchart: `graph TD
@@ -53,7 +53,7 @@ const PRESETS = {
     checkout develop
     commit id: "Add core features"
     branch feature-mermaid
-    commit id: "Create <mer-maid> element"
+    commit id: "Create <mermaid-element> element"
     commit id: "Add version loader"
     checkout develop
     merge feature-mermaid
@@ -67,7 +67,7 @@ const PRESETS = {
     "Other" : 5`,
 
   mindmap: `mindmap
-  root((mer-maid))
+  root((mermaid-element))
     Features
       Zero configuration
       Dynamic versions
@@ -227,7 +227,7 @@ export class DemoApp {
     const mermaidAttr = this.targetElement.getAttribute('mermaid');
     const themeAttr = this.targetElement.getAttribute('theme');
 
-    let openTag = '&lt;mer-maid';
+    let openTag = '&lt;mermaid-element';
     if (mermaidAttr) {
       openTag += ` mermaid="${this.escapeHtml(mermaidAttr)}"`;
     }
@@ -245,7 +245,7 @@ export class DemoApp {
       shortenedCode = lines.slice(0, 3).map(l => this.escapeHtml(l)).join('\n') + '\n    ...';
     }
 
-    this.markupElement.innerHTML = `${openTag}\n${shortenedCode}\n&lt;/mer-maid&gt;`;
+    this.markupElement.innerHTML = `${openTag}\n${shortenedCode}\n&lt;/mermaid-element&gt;`;
   }
 }
 
@@ -293,7 +293,7 @@ function initScrollspyFallback() {
 }
 
 if (typeof window !== 'undefined') {
-  window.MerMaid = MerMaid;
+  window.MermaidElement = MermaidElement;
   window.addEventListener('DOMContentLoaded', () => {
     window.demoApp = new DemoApp();
     initScrollspyFallback();

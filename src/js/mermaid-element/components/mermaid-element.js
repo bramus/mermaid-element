@@ -1,5 +1,5 @@
 /**
- * <mer-maid> Custom Element
+ * <mermaid-element> Custom Element
  * Renders Mermaid diagrams provided as child syntax.
  */
 
@@ -8,7 +8,7 @@ import { loadMermaid } from '../utils/loader.js';
 let diagramCounter = 0;
 
 function createDiagramId() {
-  return `mer-maid-${Date.now().toString(36)}-${(++diagramCounter).toString(36)}`;
+  return `mermaid-element-${Date.now().toString(36)}-${(++diagramCounter).toString(36)}`;
 }
 
 function escapeHtml(str) {
@@ -53,9 +53,9 @@ template.innerHTML = `
       width: 100%;
       padding: 1rem;
       border-radius: 6px;
-      background-color: var(--mer-maid-error-bg, #fef2f2);
-      color: var(--mer-maid-error-color, #991b1b);
-      border: 1px solid var(--mer-maid-error-border, #f87171);
+      background-color: var(--mermaid-element-error-bg, #fef2f2);
+      color: var(--mermaid-element-error-color, #991b1b);
+      border: 1px solid var(--mermaid-element-error-border, #f87171);
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       font-size: 0.875rem;
       line-height: 1.5;
@@ -78,7 +78,7 @@ template.innerHTML = `
   <div class="container" part="container"></div>
 `;
 
-export class MerMaid extends HTMLElement {
+export class MermaidElement extends HTMLElement {
   static defaultMermaid = null;
 
   static get observedAttributes() {
@@ -200,7 +200,7 @@ export class MerMaid extends HTMLElement {
 
       const mermaid = await loadMermaid(mermaidAttr, {
         config,
-        defaultInstance: MerMaid.defaultMermaid
+        defaultInstance: MermaidElement.defaultMermaid
       });
 
       // Avoid race conditions if a newer render was triggered

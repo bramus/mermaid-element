@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>&lt;mer-maid&gt; – Mermaid Diagrams Custom Element</title>
+  <title>&lt;mermaid-element&gt; – Mermaid Diagrams Custom Element</title>
   <meta name="description" content="A custom element that displays Mermaid Diagrams directly from HTML syntax with dynamic version support and Shadow DOM encapsulation.">
 
   <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="js/mer-maid/index.js"></script>
+  <script type="module" src="js/mermaid-element/index.js"></script>
   <script type="module" src="js/app.js"></script>
 </head>
 <body>
@@ -15,7 +15,7 @@
     <header>
       <div class="header-top">
         <div class="title-group">
-          <h1><span class="title-tag">&lt;mer-maid&gt;</span></h1>
+          <h1><span class="title-tag">&lt;mermaid-element&gt;</span></h1>
           <div class="badge-row">
             <span class="badge badge-primary">Custom Element</span>
             <span class="badge">Zero Dependencies</span>
@@ -25,7 +25,7 @@
           </div>
         </div>
         <div class="header-actions">
-          <a href="http://github.com/bramus/mer-maid" class="github-btn" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+          <a href="http://github.com/bramus/mermaid-element" class="github-btn" target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
               <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
             </svg>
@@ -34,7 +34,7 @@
         </div>
       </div>
       <p class="description">
-        A <code>&lt;mer-maid&gt;</code> custom element that displays
+        A <code>&lt;mermaid-element&gt;</code> custom element that displays
         <a href="https://mermaid.js.org/" target="_blank" rel="noopener noreferrer">Mermaid Diagrams</a>
         with dynamic version support and Shadow DOM encapsulation.
       </p>
@@ -70,25 +70,25 @@
         <section id="overview">
           <h2>Overview</h2>
           <p class="section-desc">
-            <code>&lt;mer-maid&gt;</code> brings the declarative simplicity of HTML to diagramming. Instead of manually configuring Mermaid, managing initialization lifecycles, or wrangling script tags, you simply write your Mermaid syntax inside a <code>&lt;mer-maid&gt;</code> tag and let the browser render it.
+            <code>&lt;mermaid-element&gt;</code> brings the declarative simplicity of HTML to diagramming. Instead of manually configuring Mermaid, managing initialization lifecycles, or wrangling script tags, you simply write your Mermaid syntax inside a <code>&lt;mermaid-element&gt;</code> tag and let the browser render it.
           </p>
           <div class="card">
             <div class="card-header">
               <span class="card-title">Live Demonstration</span>
               <span class="card-meta">Declarative HTML</span>
             </div>
-            <mer-maid>
+            <mermaid-element>
               graph LR
-              HTML[Raw HTML Syntax] --> Element[&lt;mer-maid&gt; Custom Element]
+              HTML[Raw HTML Syntax] --> Element[&lt;mermaid-element&gt; Custom Element]
               Element --> Engine[Mermaid 12 via jsDelivr CDN]
               Engine --> SVG[Rendered SVG in Shadow DOM]
-            </mer-maid>
-            <pre><code>&lt;mer-maid&gt;
+            </mermaid-element>
+            <pre><code>&lt;mermaid-element&gt;
     graph LR
-        HTML[Raw HTML Syntax] --&gt; Element[&amp;lt;mer-maid&amp;gt; Custom Element]
+        HTML[Raw HTML Syntax] --&gt; Element[&amp;lt;mermaid-element&amp;gt; Custom Element]
         Element --&gt; Engine[Mermaid 12 via jsDelivr CDN]
         Engine --&gt; SVG[Rendered SVG in Shadow DOM]
-    &lt;/mer-maid&gt;</code></pre>
+    &lt;/mermaid-element&gt;</code></pre>
           </div>
         </section>
     
@@ -113,7 +113,7 @@
             </div>
             <div class="feature-card">
               <h3>🔌 Pre-Installed / Bundled Support</h3>
-              <p>Have Mermaid already in your bundle? Set <code>MerMaid.defaultMermaid = mermaid</code> to use your pre-installed package offline.</p>
+              <p>Have Mermaid already in your bundle? Set <code>MermaidElement.defaultMermaid = mermaid</code> to use your pre-installed package offline.</p>
             </div>
             <div class="feature-card">
               <h3>🧠 Smart In-Memory Caching</h3>
@@ -139,10 +139,10 @@
               <span class="card-meta">Zero Dependencies</span>
             </div>
             <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.875rem;">
-              Install <code>mer-maid</code> alone. It will dynamically fetch Mermaid 12 on demand without bloating your <code>node_modules</code>:
+              Install <code>mermaid-element</code> alone. It will dynamically fetch Mermaid 12 on demand without bloating your <code>node_modules</code>:
             </p>
-            <pre><code>npm install mer-maid</code></pre>
-            <pre><code>import 'mer-maid'; // Automatically registers &lt;mer-maid&gt;</code></pre>
+            <pre><code>npm install mermaid-element</code></pre>
+            <pre><code>import 'mermaid-element'; // Automatically registers &lt;mermaid-element&gt;</code></pre>
           </div>
     
           <div class="card">
@@ -153,12 +153,12 @@
             <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.875rem;">
               If your application bundles Mermaid locally or runs in an air-gapped environment, install both packages and assign your instance:
             </p>
-            <pre><code>npm install mer-maid mermaid</code></pre>
+            <pre><code>npm install mermaid-element mermaid</code></pre>
             <pre><code>import mermaid from 'mermaid';
-    import { MerMaid } from 'mer-maid';
+    import { MermaidElement } from 'mermaid-element';
     
-    // Direct &lt;mer-maid&gt; to use your local bundled Mermaid library
-    MerMaid.defaultMermaid = mermaid;</code></pre>
+    // Direct &lt;mermaid-element&gt; to use your local bundled Mermaid library
+    MermaidElement.defaultMermaid = mermaid;</code></pre>
           </div>
     
           <div class="card">
@@ -169,7 +169,7 @@
             <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.875rem;">
               Include the module directly in any HTML document without build tools:
             </p>
-            <pre><code>&lt;script type="module" src="https://cdn.jsdelivr.net/npm/mer-maid/index.js"&gt;&lt;/script&gt;</code></pre>
+            <pre><code>&lt;script type="module" src="https://cdn.jsdelivr.net/npm/mermaid-element/index.js"&gt;&lt;/script&gt;</code></pre>
           </div>
         </section>
 
@@ -177,12 +177,12 @@
         <section id="version-control">
           <h2>Controlling Mermaid Version</h2>
           <p class="section-desc">
-            How <code>&lt;mer-maid&gt;</code> resolves and loads Mermaid libraries.
+            How <code>&lt;mermaid-element&gt;</code> resolves and loads Mermaid libraries.
           </p>
 
           <div class="card">
             <p style="margin-bottom: 1rem;">
-              By default, <code>&lt;mer-maid&gt;</code> dynamically loads <strong>Mermaid 12</strong> on demand from jsDelivr (see <a href="#example-default">Example 1</a>).
+              By default, <code>&lt;mermaid-element&gt;</code> dynamically loads <strong>Mermaid 12</strong> on demand from jsDelivr (see <a href="#example-default">Example 1</a>).
             </p>
 
             <p style="margin-bottom: 0.75rem;">
@@ -199,24 +199,24 @@
 
             <div class="card-header">
               <span class="card-title">Bring Your Own Mermaid</span>
-              <span class="card-meta">MerMaid.defaultMermaid</span>
+              <span class="card-meta">MermaidElement.defaultMermaid</span>
             </div>
             <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.875rem;">
               If your application already bundles Mermaid or operates in an offline / air-gapped environment, you can supply your own default instance instead of fetching from a CDN:
             </p>
             <pre><code>import mermaid from 'mermaid';
-import { MerMaid } from 'mer-maid';
+import { MermaidElement } from 'mermaid-element';
 
 // Use your pre-installed or pre-configured instance as the default
-MerMaid.defaultMermaid = mermaid;</code></pre>
+MermaidElement.defaultMermaid = mermaid;</code></pre>
             <p style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.875rem;">
-              For script-based setups, <code>&lt;mer-maid&gt;</code> also automatically detects a globally defined <code>window.mermaid</code>. Individual elements can still override this default by specifying their own <code>mermaid</code> attribute.
+              For script-based setups, <code>&lt;mermaid-element&gt;</code> also automatically detects a globally defined <code>window.mermaid</code>. Individual elements can still override this default by specifying their own <code>mermaid</code> attribute.
             </p>
 
             <div class="callout" style="margin-bottom: 0; margin-top: 1.25rem;">
               <h3>🧠 Smart In-Memory Caching</h3>
               <p>
-                Loaded Mermaid modules and pending load promises are cached in memory by URL. When multiple <code>&lt;mer-maid&gt;</code> elements share the same version or endpoint on a page, Mermaid is fetched and initialized only once.
+                Loaded Mermaid modules and pending load promises are cached in memory by URL. When multiple <code>&lt;mermaid-element&gt;</code> elements share the same version or endpoint on a page, Mermaid is fetched and initialized only once.
               </p>
             </div>
           </div>
@@ -226,7 +226,7 @@ MerMaid.defaultMermaid = mermaid;</code></pre>
         <section id="styling-before-upgrade">
           <h2>Styling Before Upgrade</h2>
           <p class="section-desc">
-            Before custom elements are registered and upgraded by the browser, they behave like unstyled inline text elements. Because scripts take time to download and execute, you can choose between two strategies for how un-upgraded <code>&lt;mer-maid&gt;</code> elements appear while loading:
+            Before custom elements are registered and upgraded by the browser, they behave like unstyled inline text elements. Because scripts take time to download and execute, you can choose between two strategies for how un-upgraded <code>&lt;mermaid-element&gt;</code> elements appear while loading:
           </p>
 
           <div class="card">
@@ -237,7 +237,7 @@ MerMaid.defaultMermaid = mermaid;</code></pre>
             <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.875rem;">
               Format the raw Mermaid syntax as a readable monospace code block until the component upgrades:
             </p>
-            <pre><code>mer-maid:not(:defined) {
+            <pre><code>mermaid-element:not(:defined) {
   display: block;
   white-space: pre-wrap;
   font-family: monospace;
@@ -263,9 +263,9 @@ MerMaid.defaultMermaid = mermaid;</code></pre>
               <span class="card-meta">Results in a CLS</span>
             </div>
             <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.875rem;">
-              Hide <code>&lt;mer-maid&gt;</code> elements completely until they are registered in the <code>CustomElementRegistry</code>:
+              Hide <code>&lt;mermaid-element&gt;</code> elements completely until they are registered in the <code>CustomElementRegistry</code>:
             </p>
-            <pre><code>mer-maid:not(:defined) {
+            <pre><code>mermaid-element:not(:defined) {
   display: none;
 }</code></pre>
             <div class="callout">
@@ -320,7 +320,7 @@ MerMaid.defaultMermaid = mermaid;</code></pre>
                     <td>Read-only reference to the rendered SVG element inside the shadow root.</td>
                   </tr>
                   <tr>
-                    <td><code>MerMaid.defaultMermaid</code></td>
+                    <td><code>MermaidElement.defaultMermaid</code></td>
                     <td><code>any</code></td>
                     <td>Static property to specify an explicit pre-configured Mermaid instance to use as the default.</td>
                   </tr>
@@ -366,7 +366,7 @@ MerMaid.defaultMermaid = mermaid;</code></pre>
               <span class="card-meta">::part()</span>
             </div>
             <p style="margin-bottom: 0.75rem; color: var(--text-muted); font-size: 0.875rem;">
-              <code>&lt;mer-maid&gt;</code> exposes internal structural elements via the <code>part</code> attribute so you can style them from your page stylesheet using <code>::part()</code>:
+              <code>&lt;mermaid-element&gt;</code> exposes internal structural elements via the <code>part</code> attribute so you can style them from your page stylesheet using <code>::part()</code>:
             </p>
             <div class="api-table-wrapper">
               <table class="api-table">
@@ -392,14 +392,14 @@ MerMaid.defaultMermaid = mermaid;</code></pre>
               </table>
             </div>
             <pre><code>/* Style the diagram container */
-mer-maid::part(container) {
+mermaid-element::part(container) {
   padding: 1.5rem;
   background: var(--bg-surface-elevated);
   border-radius: 8px;
 }
 
 /* Customize the error box */
-mer-maid::part(error) {
+mermaid-element::part(error) {
   border-color: #ef4444;
   background-color: #fef2f2;
 }</code></pre>
@@ -410,14 +410,14 @@ mer-maid::part(error) {
         <section id="example-default">
           <h2>Example 1: Default (Mermaid 12)</h2>
           <p class="section-desc">
-            When no <code>mermaid</code> attribute is passed, <code>&lt;mer-maid&gt;</code> uses your configured <code>MerMaid.defaultMermaid</code> (or <code>window.mermaid</code>) if provided, or defaults to Mermaid 12 dynamically loaded on demand from jsDelivr.
+            When no <code>mermaid</code> attribute is passed, <code>&lt;mermaid-element&gt;</code> uses your configured <code>MermaidElement.defaultMermaid</code> (or <code>window.mermaid</code>) if provided, or defaults to Mermaid 12 dynamically loaded on demand from jsDelivr.
           </p>
           <div class="card">
             <div class="card-header">
               <span class="card-title">Architecture Flowchart</span>
-              <span class="card-meta">&lt;mer-maid&gt;</span>
+              <span class="card-meta">&lt;mermaid-element&gt;</span>
             </div>
-            <mer-maid>
+            <mermaid-element>
 graph TD
     subgraph Frontend [Client Tier]
         Web[Web Browser]
@@ -443,15 +443,15 @@ graph TD
     API2 --> DB
     API1 --> Cache
     API2 --> Cache
-            </mer-maid>
-            <pre><code>&lt;mer-maid&gt;
+            </mermaid-element>
+            <pre><code>&lt;mermaid-element&gt;
 graph TD
     subgraph Frontend [Client Tier]
         Web[Web Browser]
         Mobile[Mobile App]
     end
     ...
-&lt;/mer-maid&gt;</code></pre>
+&lt;/mermaid-element&gt;</code></pre>
           </div>
           </section>
 
@@ -466,7 +466,7 @@ graph TD
               <span class="card-title">Sequence Diagram loaded with Mermaid v10.9.8</span>
               <span class="card-meta">mermaid="10.9.8"</span>
             </div>
-            <mer-maid mermaid="10.9.8">
+            <mermaid-element mermaid="10.9.8">
 sequenceDiagram
     autonumber
     actor Customer
@@ -481,14 +481,14 @@ sequenceDiagram
     Customer->>PaymentGateway: Tap credit card
     PaymentGateway-->>Customer: Transaction approved
     Cashier-->>Customer: Receipt issued
-            </mer-maid>
-            <pre><code>&lt;mer-maid mermaid="10.9.8"&gt;
+            </mermaid-element>
+            <pre><code>&lt;mermaid-element mermaid="10.9.8"&gt;
 sequenceDiagram
     autonumber
     actor Customer
     actor Cashier
     ...
-&lt;/mer-maid&gt;</code></pre>
+&lt;/mermaid-element&gt;</code></pre>
           </div>
           </section>
 
@@ -503,7 +503,7 @@ sequenceDiagram
               <span class="card-title">State Diagram loaded from specific URL</span>
               <span class="card-meta">mermaid="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/..."</span>
             </div>
-            <mer-maid mermaid="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs">
+            <mermaid-element mermaid="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs">
 stateDiagram-v2
     [*] --> Draft
     Draft --> InReview : Submit for Review
@@ -511,12 +511,12 @@ stateDiagram-v2
     InReview --> Draft : Request Changes
     Approved --> Published : Deploy
     Published --> [*]
-            </mer-maid>
-            <pre><code>&lt;mer-maid mermaid="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs"&gt;
+            </mermaid-element>
+            <pre><code>&lt;mermaid-element mermaid="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs"&gt;
 stateDiagram-v2
     [*] --> Draft
     ...
-&lt;/mer-maid&gt;</code></pre>
+&lt;/mermaid-element&gt;</code></pre>
           </div>
           </section>
 
@@ -589,10 +589,10 @@ stateDiagram-v2
               <div class="playground-preview">
                 <div class="preview-header">
                   <strong>Live Preview</strong>
-                  <span class="badge badge-primary">&lt;mer-maid&gt;</span>
+                  <span class="badge badge-primary">&lt;mermaid-element&gt;</span>
                 </div>
                 <div class="preview-content">
-                  <mer-maid id="playground-target">
+                  <mermaid-element id="playground-target">
 graph TD
     A[Client Request] --> B[API Gateway]
     B --> C{Authentication}
@@ -600,16 +600,16 @@ graph TD
     C -->|Invalid| E[401 Unauthorized]
     D --> F[(PostgreSQL)]
     D --> G[(Redis Cache)]
-                  </mer-maid>
+                  </mermaid-element>
                   </div>
                   </div>
                   </div>
-                  <pre><code id="playground-markup">&lt;mer-maid&gt;
+                  <pre><code id="playground-markup">&lt;mermaid-element&gt;
 graph TD
     A[Client Request] --&gt; B[API Gateway]
     B --&gt; C{Authentication}
     ...
-&lt;/mer-maid&gt;</code></pre>
+&lt;/mermaid-element&gt;</code></pre>
           </div>
           </section>
 
@@ -617,17 +617,17 @@ graph TD
         <section id="example-error">
           <h2>Example 5: Error Handling</h2>
           <p class="section-desc">
-            When invalid Mermaid syntax is provided, <code>&lt;mer-maid&gt;</code> captures the parse error gracefully and renders an accessible error notification with <code>part="error"</code> without crashing the application.
+            When invalid Mermaid syntax is provided, <code>&lt;mermaid-element&gt;</code> captures the parse error gracefully and renders an accessible error notification with <code>part="error"</code> without crashing the application.
           </p>
           <div class="card">
             <div class="card-header">
               <span class="card-title">Diagram with syntax error</span>
               <span class="card-meta">Graceful Error State</span>
             </div>
-            <mer-maid>
+            <mermaid-element>
 invalid diagram syntax
 this should trigger the error boundary
-            </mer-maid>
+            </mermaid-element>
             </div>
             </section>
 
@@ -642,20 +642,20 @@ this should trigger the error boundary
               <span class="card-title">Template Tag Example</span>
               <span class="card-meta">&lt;template&gt;</span>
             </div>
-            <mer-maid>
+            <mermaid-element>
               <template>
 flowchart LR
     A["Raw & Unescaped <b>HTML</b>"] --> B["<tag>Node B</tag>"]
     B --> C["Node C"]
               </template>
-              </mer-maid>
-              <pre><code>&lt;mer-maid&gt;
+              </mermaid-element>
+              <pre><code>&lt;mermaid-element&gt;
   &lt;template&gt;
 flowchart LR
     A["Raw &amp; Unescaped &lt;b&gt;HTML&lt;/b&gt;"] --&gt; B["&lt;tag&gt;Node B&lt;/tag&gt;"]
     B --&gt; C["Node C"]
   &lt;/template&gt;
-&lt;/mer-maid&gt;</code></pre>
+&lt;/mermaid-element&gt;</code></pre>
           </div>
         </section>
 
@@ -670,31 +670,31 @@ flowchart LR
               <span class="card-title">Custom Container Styling via ::part(container)</span>
               <span class="card-meta">::part(container)</span>
             </div>
-            <mer-maid class="styled-part-example">
+            <mermaid-element class="styled-part-example">
 graph LR
     Client[Browser Client] --> LB[Load Balancer]
     LB --> App1[App Server 1]
     LB --> App2[App Server 2]
-            </mer-maid>
+            </mermaid-element>
             <pre><code>/* Page CSS */
-mer-maid.styled-part-example::part(container) {
+mermaid-element.styled-part-example::part(container) {
   padding: 1.5rem;
   background: var(--bg-surface-elevated);
   border: 2px dashed var(--primary-color);
   border-radius: 10px;
 }</code></pre>
-            <pre><code>&lt;mer-maid class="styled-part-example"&gt;
+            <pre><code>&lt;mermaid-element class="styled-part-example"&gt;
 graph LR
     Client[Browser Client] --&gt; LB[Load Balancer]
     LB --&gt; App1[App Server 1]
     LB --&gt; App2[App Server 2]
-&lt;/mer-maid&gt;</code></pre>
+&lt;/mermaid-element&gt;</code></pre>
           </div>
         </section>
 
         <footer>
           <p>
-            <strong>mer-maid</strong> – Built by <a href="https://www.bram.us/" target="_blank" rel="noopener">Bramus Van Damme</a>. Released under the MIT License. View source on <a href="http://github.com/bramus/mer-maid" target="_blank" rel="noopener">GitHub</a>.
+            <strong>mermaid-element</strong> – Built by <a href="https://www.bram.us/" target="_blank" rel="noopener">Bramus Van Damme</a>. Released under the MIT License. View source on <a href="http://github.com/bramus/mermaid-element" target="_blank" rel="noopener">GitHub</a>.
             </p>
             </footer>
       </main>

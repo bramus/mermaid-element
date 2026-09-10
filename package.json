@@ -1,7 +1,7 @@
 {
-  "name": "mer-maid",
+  "name": "mermaid-element",
   "version": "1.0.0",
-  "description": "A <mer-maid> custom element to render Mermaid diagrams with dynamic version support",
+  "description": "A <mermaid-element> custom element to render Mermaid diagrams with dynamic version support",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -33,10 +33,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bramus/mer-maid.git"
+    "url": "git+https://github.com/bramus/mermaid-element.git"
   },
   "bugs": {
-    "url": "https://github.com/bramus/mer-maid/issues"
+    "url": "https://github.com/bramus/mermaid-element/issues"
   },
-  "homepage": "https://github.com/bramus/mer-maid#readme"
+  "homepage": "https://github.com/bramus/mermaid-element#readme"
 }

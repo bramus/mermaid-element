@@ -1,21 +1,21 @@
-# mer-maid
+# mermaid-element
 
-> A `<mer-maid>` custom element that displays [Mermaid Diagrams](https://mermaid.js.org/) with dynamic version support and Shadow DOM encapsulation.
+> A `<mermaid-element>` custom element that displays [Mermaid Diagrams](https://mermaid.js.org/) with dynamic version support and Shadow DOM encapsulation.
 
-[![npm version](https://img.shields.io/npm/v/mer-maid.svg)](https://www.npmjs.com/package/mer-maid)
+[![npm version](https://img.shields.io/npm/v/mermaid-element.svg)](https://www.npmjs.com/package/mermaid-element)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[**Live Demo & Playground → https://mer-maid.netlify.app/**](https://mer-maid.netlify.app/)
+[**Live Demo & Playground → https://mermaid-element.netlify.app/**](https://mermaid-element.netlify.app/)
 
 ## Features
 
-- **Declarative & Zero-Config**: Place your Mermaid syntax directly inside the `<mer-maid>` custom element.
+- **Declarative & Zero-Config**: Place your Mermaid syntax directly inside the `<mermaid-element>` custom element.
 - **Dynamic Version Switching**:
   - Defaults to **Mermaid 12** (loaded dynamically on-demand from `cdn.jsdelivr.net`).
   - Pass a version string or number (e.g. `mermaid="10.9.8"`) to dynamically load that version on-demand from `cdn.jsdelivr.net`.
   - Pass a URL (e.g. `mermaid="https://..."` or `mermaid="/vendor/..."`) to load Mermaid from a specific endpoint.
-- **Pre-Installed / Bundled Mermaid Support**: Use your locally installed `mermaid` dependency (`npm install mer-maid mermaid`) by setting `MerMaid.defaultMermaid = mermaid`, fully bypassing CDN requests for offline or self-contained builds.
-- **Smart In-Memory Caching**: Instances are cached by version and URL. Multiple `<mer-maid>` elements sharing the same version will only download and initialize Mermaid once.
+- **Pre-Installed / Bundled Mermaid Support**: Use your locally installed `mermaid` dependency (`npm install mermaid-element mermaid`) by setting `MermaidElement.defaultMermaid = mermaid`, fully bypassing CDN requests for offline or self-contained builds.
+- **Smart In-Memory Caching**: Instances are cached by version and URL. Multiple `<mermaid-element>` elements sharing the same version will only download and initialize Mermaid once.
 - **Shadow DOM Encapsulation**: Diagram SVGs are rendered cleanly in an open Shadow Root with customizable CSS `::part()` hooks.
 - **Pre-Upgrade Styling Strategies**: Clear options for managing appearance before element registration (fallback code styling with FOUC vs. hiding with CLS).
 - **Flexible Syntax Formats**: Supports direct text, `<template>` (ideal for unescaped HTML characters), `<code>`, and `<pre>` blocks.
@@ -26,7 +26,7 @@
 
 ## Demo
 
-Check out the interactive showcase and live playground at **[https://mer-maid.netlify.app/](https://mer-maid.netlify.app/)**.
+Check out the interactive showcase and live playground at **[https://mermaid-element.netlify.app/](https://mermaid-element.netlify.app/)**.
 
 ---
 
@@ -37,33 +37,33 @@ Check out the interactive showcase and live playground at **[https://mer-maid.ne
 Install the package into your project:
 
 ```bash
-npm install mer-maid
+npm install mermaid-element
 ```
 
 Then import it in your JavaScript/TypeScript bundle (Vite, Webpack, Rollup, Next.js, etc.):
 
 ```javascript
-import 'mer-maid'; // Automatically registers the <mer-maid> custom element
+import 'mermaid-element'; // Automatically registers the <mermaid-element> custom element
 ```
 
-By default, `<mer-maid>` operates as a zero-dependency component and dynamically loads Mermaid 12 from jsDelivr on demand.
+By default, `<mermaid-element>` operates as a zero-dependency component and dynamically loads Mermaid 12 from jsDelivr on demand.
 
 ### 2. Using npm with a Pre-Installed / Bundled `mermaid` Dependency
 
 If your project bundles `mermaid` locally (e.g. for offline builds, air-gapped environments, locked dependencies, or custom plugins), you can install both packages:
 
 ```bash
-npm install mer-maid mermaid
+npm install mermaid-element mermaid
 ```
 
-Then set `MerMaid.defaultMermaid` (or `window.mermaid`). `<mer-maid>` will use your pre-installed package directly without making any external CDN requests:
+Then set `MermaidElement.defaultMermaid` (or `window.mermaid`). `<mermaid-element>` will use your pre-installed package directly without making any external CDN requests:
 
 ```javascript
 import mermaid from 'mermaid';
-import { MerMaid } from 'mer-maid';
+import { MermaidElement } from 'mermaid-element';
 
-// Tell <mer-maid> to use your pre-installed Mermaid package
-MerMaid.defaultMermaid = mermaid;
+// Tell <mermaid-element> to use your pre-installed Mermaid package
+MermaidElement.defaultMermaid = mermaid;
 ```
 
 Or configure it via the global `window.mermaid`:
@@ -71,33 +71,33 @@ Or configure it via the global `window.mermaid`:
 ```javascript
 import mermaid from 'mermaid';
 window.mermaid = mermaid;
-import 'mer-maid';
+import 'mermaid-element';
 ```
 
 If you are serving `mermaid` without a bundler, you can also point the `mermaid` attribute directly to your local file:
 
 ```html
-<script type="module" src="js/mer-maid/index.js"></script>
+<script type="module" src="js/mermaid-element/index.js"></script>
 
-<mer-maid mermaid="js/mermaid/dist/mermaid.esm.min.mjs">
+<mermaid-element mermaid="js/mermaid/dist/mermaid.esm.min.mjs">
 graph TD
     A --> B
-</mer-maid>
+</mermaid-element>
 ```
 
 ### 3. Using a CDN (No Build Tools Required)
 
-You can also use `<mer-maid>` directly in the browser by loading it from a CDN:
+You can also use `<mermaid-element>` directly in the browser by loading it from a CDN:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/mer-maid/index.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/mermaid-element/index.js"></script>
 ```
 
 ---
 
 ## Styling Before Upgrade
 
-Before custom elements are registered and upgraded by the browser, they behave as unstyled inline elements. Because scripts take time to download and register `<mer-maid>`, you should choose how un-upgraded elements appear while scripts are loading.
+Before custom elements are registered and upgraded by the browser, they behave as unstyled inline elements. Because scripts take time to download and register `<mermaid-element>`, you should choose how un-upgraded elements appear while scripts are loading.
 
 There are two approaches depending on whether you prefer to avoid layout shifts or avoid flashes of raw code:
 
@@ -106,7 +106,7 @@ There are two approaches depending on whether you prefer to avoid layout shifts 
 Show the raw Mermaid diagram syntax formatted as preformatted monospace text while waiting for the component to upgrade:
 
 ```css
-mer-maid:not(:defined) {
+mermaid-element:not(:defined) {
   display: block;
   white-space: pre-wrap;
   font-family: monospace;
@@ -114,14 +114,14 @@ mer-maid:not(:defined) {
 ```
 
 - **Pros**: Raw diagram syntax is immediately readable, even if JavaScript is delayed or fails to load.
-- **Trade-off**: **Results in a FOUC** (Flash of Unstyled Content). Once `<mer-maid>` is registered and Mermaid renders, the raw code block is abruptly replaced by the rendered SVG diagram.
+- **Trade-off**: **Results in a FOUC** (Flash of Unstyled Content). Once `<mermaid-element>` is registered and Mermaid renders, the raw code block is abruptly replaced by the rendered SVG diagram.
 
 ### 2. Hide Until Defined — Results in a CLS
 
-Hide `<mer-maid>` elements completely until the custom element has been registered in the browser's `CustomElementRegistry`:
+Hide `<mermaid-element>` elements completely until the custom element has been registered in the browser's `CustomElementRegistry`:
 
 ```css
-mer-maid:not(:defined) {
+mermaid-element:not(:defined) {
   display: none;
 }
 ```
@@ -135,15 +135,15 @@ mer-maid:not(:defined) {
 
 ### 1. Basic Example (Default: Mermaid 12)
 
-By default, `<mer-maid>` defaults to **Mermaid 12**, loaded dynamically on-demand from jsDelivr:
+By default, `<mermaid-element>` defaults to **Mermaid 12**, loaded dynamically on-demand from jsDelivr:
 
 ```html
-<mer-maid>
+<mermaid-element>
 graph TD
     Client[Client Request] --> LB[Load Balancer]
     LB --> Server1[Server 01]
     LB --> Server2[Server 02]
-</mer-maid>
+</mermaid-element>
 ```
 
 ### 2. Specifying a Mermaid Version
@@ -151,12 +151,12 @@ graph TD
 Pass a version number or string to load that specific Mermaid release dynamically from `cdn.jsdelivr.net`:
 
 ```html
-<mer-maid mermaid="10.9.8">
+<mermaid-element mermaid="10.9.8">
 sequenceDiagram
     autonumber
     Alice->>Bob: Hello Bob!
     Bob-->>Alice: Hi Alice!
-</mer-maid>
+</mermaid-element>
 ```
 
 ### 3. Loading Mermaid from a Custom URL
@@ -164,12 +164,12 @@ sequenceDiagram
 Pass a full URL or relative path to load Mermaid from an external CDN or self-hosted asset:
 
 ```html
-<mer-maid mermaid="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs">
+<mermaid-element mermaid="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs">
 stateDiagram-v2
     [*] --> Idle
     Idle --> Active : Start
     Active --> [*] : Finish
-</mer-maid>
+</mermaid-element>
 ```
 
 ### 4. Using `<template>` for Unescaped Characters
@@ -177,12 +177,12 @@ stateDiagram-v2
 When your diagrams contain HTML characters (like `<tag>` or `<` and `>`), wrap your diagram in a `<template>` tag so the browser parser doesn't treat them as HTML tags:
 
 ```html
-<mer-maid>
+<mermaid-element>
   <template>
 flowchart LR
     A["<b>Node A</b>"] --> B["<Node B>"]
   </template>
-</mer-maid>
+</mermaid-element>
 ```
 
 ### 5. Applying Themes
@@ -190,17 +190,17 @@ flowchart LR
 Use the `theme` attribute to set a Mermaid theme (`default`, `neutral`, `dark`, `forest`, `base`):
 
 ```html
-<mer-maid theme="dark">
+<mermaid-element theme="dark">
 graph TD
     A --> B
-</mer-maid>
+</mermaid-element>
 ```
 
 *(You can also use Mermaid's built-in `%%{init: {'theme': 'dark'}}%%` directive or YAML frontmatter directly in the diagram syntax).*
 
 ### 6. Instance Caching & Deduplication
 
-`<mer-maid>` features a built-in in-memory cache (`instanceCache`) keyed by version and URL. When multiple `<mer-maid>` elements are present on the same page using the same Mermaid version:
+`<mermaid-element>` features a built-in in-memory cache (`instanceCache`) keyed by version and URL. When multiple `<mermaid-element>` elements are present on the same page using the same Mermaid version:
 
 - **Single Download**: Mermaid is fetched over the network only once.
 - **Shared In-Flight Promise**: If multiple elements mount at the exact same time, they share the same pending module import promise, avoiding duplicate concurrent requests.
@@ -210,11 +210,11 @@ Different versions coexist side-by-side without interference:
 
 ```html
 <!-- These two elements share a single download of Mermaid v10.9.8 -->
-<mer-maid mermaid="10.9.8">...</mer-maid>
-<mer-maid mermaid="10.9.8">...</mer-maid>
+<mermaid-element mermaid="10.9.8">...</mermaid-element>
+<mermaid-element mermaid="10.9.8">...</mermaid-element>
 
 <!-- This element downloads and caches Mermaid v11.4.1 separately -->
-<mer-maid mermaid="11.4.1">...</mer-maid>
+<mermaid-element mermaid="11.4.1">...</mermaid-element>
 ```
 
 ---
@@ -240,13 +240,13 @@ Different versions coexist side-by-side without interference:
 - **`DEFAULT_MERMAID_URL`**: `string`
   The default URL for Mermaid 12 (`https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs`) loaded dynamically by default.
 - **`clearMermaidCache()`**: `void`
-  Clears the in-memory cache of loaded Mermaid instances (imported from `mer-maid`).
+  Clears the in-memory cache of loaded Mermaid instances (imported from `mermaid-element`).
 - **`loadMermaid(mermaidAttr, options)`**: `Promise<any>`
   Helper function used internally to resolve and retrieve a Mermaid instance.
 
 ### Static Properties
 
-- **`MerMaid.defaultMermaid`**: `any`
+- **`MermaidElement.defaultMermaid`**: `any`
   Assign an explicit pre-configured Mermaid instance to be used as the default instead of importing.
 
 ### Events
@@ -259,7 +259,7 @@ Different versions coexist side-by-side without interference:
 Example:
 
 ```javascript
-const diagram = document.querySelector('mer-maid');
+const diagram = document.querySelector('mermaid-element');
 
 diagram.addEventListener('render', (e) => {
   console.log('Rendered SVG length:', e.detail.svg.length);
@@ -280,18 +280,18 @@ graph LR
 
 ## Styling & Shadow Parts
 
-`<mer-maid>` renders into an open Shadow Root. You can style the container or error states using CSS `::part()`:
+`<mermaid-element>` renders into an open Shadow Root. You can style the container or error states using CSS `::part()`:
 
 ```css
 /* Style the diagram container */
-mer-maid::part(container) {
+mermaid-element::part(container) {
   padding: 1.5rem;
   background: #f8fafc;
   border-radius: 8px;
 }
 
 /* Customize the error box */
-mer-maid::part(error) {
+mermaid-element::part(error) {
   border-color: #ef4444;
   background-color: #fef2f2;
 }
@@ -304,10 +304,10 @@ mer-maid::part(error) {
 This repository follows the clean subfolder publishing structure detailed in Bramus's post:
 
 ```
-mer-maid/
+mermaid-element/
 ├── dist/                      # Publication target (self-contained npm package)
 │   ├── components/
-│   │   └── mer-maid.js
+│   │   └── mermaid-element.js
 │   ├── utils/
 │   │   └── loader.js
 │   ├── index.js               # Entry point
@@ -321,7 +321,7 @@ mer-maid/
 │   │   └── style.css
 │   ├── js/
 │   │   ├── app.js             # Demo application controller
-│   │   └── mer-maid/          # Component source code
+│   │   └── mermaid-element/          # Component source code
 │   └── index.html             # Demo & sample showcase page
 ├── LICENSE
 ├── README.md

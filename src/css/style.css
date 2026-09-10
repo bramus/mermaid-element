@@ -40,10 +40,10 @@ body {
 /*
  * ==========================================================================
  * PRE-UPGRADE STYLING (FALLBACK)
- * Applied to <mer-maid> before the Custom Element is defined in the browser.
+ * Applied to <mermaid-element> before the Custom Element is defined in the browser.
  * ==========================================================================
  */
-mer-maid:not(:defined) {
+mermaid-element:not(:defined) {
   display: block;
   white-space: pre-wrap;
   font-family: var(--font-mono);
@@ -553,7 +553,7 @@ textarea.form-control {
 }
 
 /* Example 7: Shadow Parts Demo */
-mer-maid.styled-part-example::part(container) {
+mermaid-element.styled-part-example::part(container) {
   padding: 1.5rem;
   background: var(--bg-surface-elevated);
   border: 2px dashed var(--primary-color);
