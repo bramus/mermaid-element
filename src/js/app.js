@@ -123,9 +123,7 @@ export class DemoApp {
     this.targetElement.addEventListener('error', (e) => {
       if (this.statusBadge) {
         this.statusBadge.textContent = 'Syntax Error';
-        this.statusBadge.className = 'badge';
-        this.statusBadge.style.color = '#ef4444';
-        this.statusBadge.style.borderColor = '#fca5a5';
+        this.statusBadge.className = 'badge badge-error';
       }
     });
 

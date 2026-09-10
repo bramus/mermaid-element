@@ -281,6 +281,12 @@ header {
   border-color: rgba(37, 99, 235, 0.2);
 }
 
+.badge-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
 /* Sections & Cards */
 section {
   margin-bottom: 3rem;
