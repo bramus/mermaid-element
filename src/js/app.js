@@ -67,21 +67,21 @@ const PRESETS = {
     "Other" : 5`,
 
   mindmap: `mindmap
-  root((mermaid-element))
-    Features
-      Zero configuration
-      Dynamic versions
-      Shadow DOM
-      Accessible
-    Versions
-      Default (Mermaid 12)
-      CDN jsDelivr
-      Custom URL
-    Diagrams
-      Flowcharts
-      Sequences
-      State charts
-      Git graphs`
+    root((mermaid-element))
+      Features
+        Zero configuration
+        Dynamic versions
+        Shadow DOM
+        Accessible
+      Versions
+        Default (Mermaid 12)
+        CDN jsDelivr
+        Custom URL
+      Diagrams
+        Flowcharts
+        Sequences
+        State charts
+        Git graphs`
 };
 
 export class DemoApp {
