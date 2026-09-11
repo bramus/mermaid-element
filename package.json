@@ -1,6 +1,6 @@
 {
   "name": "mermaid-element",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom element that displays Mermaid Diagrams with dynamic version support",
   "type": "module",
   "main": "./dist/index.js",
