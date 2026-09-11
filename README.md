@@ -1,6 +1,6 @@
 # mermaid-element
 
-> A `<mermaid-element>` custom element that displays [Mermaid Diagrams](https://mermaid.js.org/) with dynamic version support and Shadow DOM encapsulation.
+> A custom element that displays [Mermaid Diagrams](https://mermaid.js.org/) with dynamic version support.
 
 [![npm version](https://img.shields.io/npm/v/mermaid-element.svg)](https://www.npmjs.com/package/mermaid-element)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -13,11 +13,10 @@
 - **Dynamic Version Switching**:
   - Defaults to **Mermaid 12** (loaded dynamically on-demand from `cdn.jsdelivr.net`).
   - Pass a version string or number (e.g. `mermaid="10.9.8"`) to dynamically load that version on-demand from `cdn.jsdelivr.net`.
-  - Pass a URL (e.g. `mermaid="https://..."` or `mermaid="/vendor/..."`) to load Mermaid from a specific endpoint.
+  - Pass a URL (e.g. `mermaid="https://..."` or `mermaid="/js/..."`) to load Mermaid from a specific endpoint.
 - **Pre-Installed / Bundled Mermaid Support**: Use your locally installed `mermaid` dependency (`npm install mermaid-element mermaid`) by setting `MermaidElement.defaultMermaid = mermaid`, fully bypassing CDN requests for offline or self-contained builds.
 - **Smart In-Memory Caching**: Instances are cached by version and URL. Multiple `<mermaid-element>` elements sharing the same version will only download and initialize Mermaid once.
 - **Shadow DOM Encapsulation**: Diagram SVGs are rendered cleanly in an open Shadow Root with customizable CSS `::part()` hooks.
-- **Pre-Upgrade Styling Strategies**: Clear options for managing appearance before element registration (fallback code styling with FOUC vs. hiding with CLS).
 - **Flexible Syntax Formats**: Supports direct text, `<template>` (ideal for unescaped HTML characters), `<code>`, and `<pre>` blocks.
 - **Reactive API**: Updating child content, changing the `mermaid` or `theme` attributes, or modifying the `.diagram` property automatically re-renders the diagram.
 - **Graceful Error Handling**: Captures syntax errors, emits an `error` event, and renders an accessible error alert with `part="error"` without breaking the host page.
@@ -297,45 +296,14 @@ mermaid-element::part(error) {
 }
 ```
 
----
-
-## Project Structure & Packaging
-
-This repository follows the clean subfolder publishing structure detailed in Bramus's post:
-
-```
-mermaid-element/
-├── dist/                      # Publication target (self-contained npm package)
-│   ├── components/
-│   │   └── mermaid-element.js
-│   ├── utils/
-│   │   └── loader.js
-│   ├── index.js               # Entry point
-│   ├── LICENSE
-│   ├── README.md
-│   └── package.json           # Tailored package.json with ./ paths
-├── scripts/
-│   └── build.js               # Copies package files to dist/ & cleans package.json
-├── src/                       # Development & demo workspace
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   ├── app.js             # Demo application controller
-│   │   └── mermaid-element/          # Component source code
-│   └── index.html             # Demo & sample showcase page
-├── LICENSE
-├── README.md
-└── package.json
-```
-
 ### Development Scripts
 
 - **`npm run dev`** or **`npm start`**: Starts a local development server for `src/`.
 - **`npm run build`**: Assembles the clean, self-contained `./dist` folder ready for npm publishing.
-- **`npm run pub`**: Runs the build and publishes `./dist` to npm with the `prepublishOnly` guard enabled.
+- **`npm run pub`**: Runs the build and publishes `./dist` to npm.
 
 ---
 
 ## License
 
-[MIT](LICENSE) © [Bramus Van Damme](https://www.bram.us/)
+[MIT](LICENSE) © [Bramus](https://www.bram.us/)
